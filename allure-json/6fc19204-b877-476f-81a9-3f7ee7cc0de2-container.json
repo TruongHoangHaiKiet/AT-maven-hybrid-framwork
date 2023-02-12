@@ -1,0 +1,1 @@
+{"uuid":"6fc19204-b877-476f-81a9-3f7ee7cc0de2","name":"Tech Panda","children":["ec9cfe70-b70d-4a74-aa96-ed539a33ce2f"],"befores":[{"name":"deleteAllFilesInScreenshotFolder","status":"passed","stage":"finished","description":"","steps":[],"attachments":[],"parameters":[],"start":1676207404668,"stop":1676207404675}],"afters":[],"start":1676207404647,"stop":1676207443302}

@@ -1,0 +1,16 @@
+{
+	"Login": {
+		"firstName": "Automation",
+		"lastName": "FC",
+		"emailAddress": "autoFC",
+		"webMail": "@gmail.com",
+		"passWord": "123456"
+	},
+	
+	"address": "123 WL",
+	"city": "LA",
+	"Register":{
+		"phoneNumber": "0987654321"
+	}
+	
+}

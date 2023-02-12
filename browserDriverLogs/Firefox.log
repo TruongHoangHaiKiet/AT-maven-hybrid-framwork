@@ -1,0 +1,23 @@
+1671375418535	geckodriver	INFO	Listening on 127.0.0.1:9438
+1671375421113	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-no-remote" "-profile" "C:\\Users\\User\\AppData\\Local\\Temp\\rust_mozprofile3Ip8J5"
+1671375423498	Marionette	INFO	Marionette enabled
+1671375423512	Marionette	INFO	Listening on port 61657
+Read port: 61657
+1671375424216	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+[Parent 16332, IPC I/O Parent] WARNING: file /builds/worker/checkouts/gecko/ipc/chromium/src/base/process_util_win.cc:167
+WARNING: content window passed to PrivateBrowsingUtils.isWindowPrivate. Use isContentWindowPrivate instead (but only for frame scripts).
+pbu_isWindowPrivate@resource://gre/modules/PrivateBrowsingUtils.jsm:25:11
+isBrowserPrivate@resource://gre/modules/PrivateBrowsingUtils.jsm:45:19
+loadURI@resource://gre/modules/RemoteWebNavigation.jsm:86:56
+loadURI/<@chrome://global/content/elements/browser-custom-element.js:799:28
+_wrapURIChangeCall@chrome://global/content/elements/browser-custom-element.js:726:9
+loadURI@chrome://global/content/elements/browser-custom-element.js:798:12
+loadURI@chrome://mozapps/content/extensions/aboutaddons.js:2472:18
+render/<@chrome://mozapps/content/extensions/aboutaddons.js:2451:14
+render@chrome://mozapps/content/extensions/aboutaddons.js:2410:11
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\User\\AppData\\Local\\Temp\\rust_mozprofile3Ip8J5\\search.json.mozlz4", (void 0)))
+JavaScript error: , line 0: uncaught exception: undefined
+[Parent 16332, IPC I/O Parent] WARNING: file /builds/worker/checkouts/gecko/ipc/chromium/src/base/process_util_win.cc:167
+console.warn: LoginRecipes: "Falling back to a synchronous message for: http://live.techpanda.org."
+JavaScript warning: https://pagead2.googlesyndication.com/bg/3WpNOUgrN-_pxVw2NAHVNtofer_w6aLb3ZHXGHAM44Y.js line 2 > eval line 940 > eval line 1 > eval line 1 > eval, line 1: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+1671375444373	Marionette	INFO	Stopped listening on port 61657

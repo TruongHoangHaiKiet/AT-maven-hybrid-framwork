@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite parallel="false" name="Tech Panda">
+ 
+<!--   <parameter name="url" value="https://www.saucedemo.com/"/>	 -->
+  
+  <listeners>
+  		<listener class-name="commons.MethodListener"/>
+  </listeners>
+  
+  <test name="Run on FIREFOX browser">
+  	<parameter name="browser" value="firefox"/>
+    <classes>
+      <class name="javaBasic.Topic_07_Switch_Case"/>
+    </classes>
+  </test> 
+  
+  <test name="Run on CHROME browser">
+  	<parameter name="browser" value="chrome"/>
+    <classes>
+      <class name="javaBasic.Topic_07_Switch_Case"/>
+    </classes>
+  </test> 
+  
+  <test name="Run on Edge browser">
+  	<parameter name="browser" value="edge"/>
+    <classes>
+      <class name="javaBasic.Topic_07_Switch_Case"/>
+    </classes>
+  </test> 
+
+ 
+</suite> 

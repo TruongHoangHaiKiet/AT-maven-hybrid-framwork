@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite parallel="false" name="Tech Panda">
+ 
+  <parameter name="url" value="https://www.saucedemo.com/"/>	
+  
+  <listeners>
+  		<listener class-name="commons.MethodListener"/>
+  </listeners>
+  
+  <test name="Run on FIREFOX browser">
+  	<parameter name="browser" value="chrome"/>
+    <classes>
+      <class name="com.saucelab.Level_20_Sort_Data"/>
+    </classes>
+  </test> 
+  
+  <!-- <test name="Run on CHROME browser">
+  	<parameter name="browser" value="chrome"/>
+    <classes>
+      <class name="com.techpanda.account.Level_19_Pattern_Object"/>
+    </classes>
+  </test>  -->
+
+ 
+</suite> 
