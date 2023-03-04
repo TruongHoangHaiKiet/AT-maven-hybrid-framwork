@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite parallel="false" name="JQuery">
+
+	<parameter name="adminUrl" value="http://localhost/wp-admin/"/>
+	<parameter name="userUrl" value="http://localhost"/>
+	<parameter name="url" value="https://blueimp.github.io/jQuery-File-Upload/"/>
+	
+	<listeners>
+  		<listener class-name="commons.MethodListener"/>
+  		<listener class-name="reportConfig.ExtentTestListener"/>
+  </listeners>
+  	
+  <test name="Run on CHROME browser">
+  	<parameter name="browser" value="chrome"/>
+    <classes>
+      <class name="com.wordpress.admin.Admin_01_Post"/>
+    </classes>
+  </test> 
+  
+ 
+  
+  
+</suite> 

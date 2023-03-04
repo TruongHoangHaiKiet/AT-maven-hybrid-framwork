@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite name="run All suites">
+	<suite-files>
+		<suite-file path="runJqueryTestCases.xml"/>
+		<suite-file path="runTechPandaTestcases.xml"/>
+	</suite-files>
+</suite> 
