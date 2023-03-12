@@ -3,3 +3,8 @@
 /testscriptLogs/
 /htmlExtent/
 /allure-json/
+/.gradle/checksums/checksums.lock
+/.gradle/6.9.3/fileHashes/fileHashes.lock
+/.gradle/6.9.3/gc.properties
+/.gradle/vcs-1/gc.properties
+/.gradle/6.9.3/fileChanges/last-build.bin
