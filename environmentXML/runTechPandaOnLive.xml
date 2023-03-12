@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <suite parallel="false" name="Tech Panda">
-<!--    <parameter name="server" value="live"/>-->
+    <parameter name="server" value="live"/>
     <parameter name="role" value="user"/>
 
     <listeners>
@@ -15,7 +15,7 @@
     <test name="Run on FIREFOX browser">
         <parameter name="browser" value="chrome"/>
         <classes>
-            <class name="com.techpanda.account.Level_28_Environment_Owner_Maven"/>
+            <class name="com.techpanda.account.Level_26_Environment_XML"/>
         </classes>
     </test>
 

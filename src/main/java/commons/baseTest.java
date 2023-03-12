@@ -66,7 +66,7 @@ public class baseTest {
 			driver = WebDriverManager.iedriver().arch32().create();
 			break;	
 		default:
-			throw new RuntimeException("Browser is not found");
+			throw new RuntimeException("Browser name is not found");
 		}
 		
 		// Set thời gian chờ để tìm được element
@@ -75,36 +75,135 @@ public class baseTest {
 		driver.get(GlobalConstants.LIVE_USER_URL);
 		return driver;
 	}
-	
-	protected WebDriver getBrowserDriver(String browserName, String urlValue) {
+
+	protected WebDriver getBrowserDriver(String browserName, String appURL) {
 		BrowserList browserList = BrowserList.valueOf(browserName.toUpperCase());
-		
 		switch (browserList) {
-		case FIREFOX:
-			driver = WebDriverManager.firefoxdriver().create();
-			break;
-		case CHROME:
-			// Lastest browser driver version - create() auto download and initiate driver of browser
-			driver = WebDriverManager.chromedriver().create();
-			
-			// Specific Browser driver version = browser version
+			case FIREFOX:
+				driver = WebDriverManager.firefoxdriver().create();
+				break;
+			case FIREFOX_HEADLESS:
+				FirefoxOptions firefoxHeadOptions = new FirefoxOptions();
+				firefoxHeadOptions.addArguments("-headless");
+				firefoxHeadOptions.addArguments("window-size=1920x1080");
+				driver = WebDriverManager.firefoxdriver().capabilities(firefoxHeadOptions).create();
+				break;
+			case CHROME:
+				// Lastest browser driver version - create() auto download and initiate driver of browser
+				driver = WebDriverManager.chromedriver().create();
+
+				// Specific Browser driver version = browser version
 //			WebDriverManager.chromedriver().driverVersion("101.0.4951.67").setup();
-			
-			// Base on: Browser version
+
+				// Base on: Browser version
 //			WebDriverManager.chromedriver().browserVersion("101.0.4951.67").setup();
-			break;
-		case EDGE:
-			driver = WebDriverManager.edgedriver().create();
-			break;
-		default:
-			throw new RuntimeException("Browser is not found");
+				break;
+			case CHROME_HEADLESS:
+				ChromeOptions chromeHeadOptions = new ChromeOptions();
+				chromeHeadOptions.addArguments("--headless");
+				chromeHeadOptions.addArguments("window-size=1920x1080");
+				driver = WebDriverManager.chromedriver().capabilities(chromeHeadOptions).create();
+				break;
+			case EDGE:
+				driver = WebDriverManager.edgedriver().create();
+				break;
+			case IE:
+				driver = WebDriverManager.iedriver().arch32().create();
+				break;
+			default:
+				throw new RuntimeException("Browser name is not found");
+		}
+
+		// Set thời gian chờ để tìm được element
+		driver.manage().timeouts().implicitlyWait(GlobalConstants.LONG_TIMEOUT, TimeUnit.SECONDS);
+		driver.manage().window().maximize();
+		driver.get(appURL);
+		return driver;
+	}
+	protected WebDriver getBrowserDriver(String browserName, String serverName, String roleName) {
+		BrowserList browserList = BrowserList.valueOf(browserName.toUpperCase());
+		switch (browserList) {
+			case FIREFOX:
+				driver = WebDriverManager.firefoxdriver().create();
+				break;
+			case FIREFOX_HEADLESS:
+				FirefoxOptions firefoxHeadOptions = new FirefoxOptions();
+				firefoxHeadOptions.addArguments("-headless");
+				firefoxHeadOptions.addArguments("window-size=1920x1080");
+				driver = WebDriverManager.firefoxdriver().capabilities(firefoxHeadOptions).create();
+				break;
+			case CHROME:
+				// Lastest browser driver version - create() auto download and initiate driver of browser
+				driver = WebDriverManager.chromedriver().create();
+
+				// Specific Browser driver version = browser version
+//			WebDriverManager.chromedriver().driverVersion("101.0.4951.67").setup();
+
+				// Base on: Browser version
+//			WebDriverManager.chromedriver().browserVersion("101.0.4951.67").setup();
+				break;
+			case CHROME_HEADLESS:
+				ChromeOptions chromeHeadOptions = new ChromeOptions();
+				chromeHeadOptions.addArguments("--headless");
+				chromeHeadOptions.addArguments("window-size=1920x1080");
+				driver = WebDriverManager.chromedriver().capabilities(chromeHeadOptions).create();
+				break;
+			case EDGE:
+				driver = WebDriverManager.edgedriver().create();
+				break;
+			case IE:
+				driver = WebDriverManager.iedriver().arch32().create();
+				break;
+			default:
+				throw new RuntimeException("Browser name is not found");
 		}
 		
 		// Set thời gian chờ để tìm được element
 		driver.manage().timeouts().implicitlyWait(GlobalConstants.LONG_TIMEOUT, TimeUnit.SECONDS);
 		driver.manage().window().maximize();
-		driver.get(urlValue);
+		driver.get(getAppURLByRoleName(serverName, roleName));
 		return driver;
+	}
+
+	private String getAppURLByRoleName(String serverName, String roleName ){
+		if (roleName.toUpperCase().equals("USER")){
+			return getUserAppURLByServerName (serverName);
+		} else {
+			return getAdminAppURLByServerName (serverName);
+		}
+	}
+
+	private String getUserAppURLByServerName(String serverName){
+		EnvironmentList serverList = EnvironmentList.valueOf(serverName.toUpperCase());
+		switch (serverList){
+			case DEV:
+				return GlobalConstants.DEV_USER_URL;
+			case TESTING:
+				return GlobalConstants.TESTING_USER_URL;
+			case STAGING:
+				return GlobalConstants.STAGING_USER_URL;
+			case LIVE:
+				return GlobalConstants.LIVE_USER_URL;
+			default:
+				throw new RuntimeException("Server name is not found");
+		}
+	}
+	private String getAdminAppURLByServerName(String serverName){
+		System.out.println("Server name: " +serverName);
+		EnvironmentList serverList = EnvironmentList.valueOf(serverName.toUpperCase());
+		System.out.println("Server name after converting: " +serverList);
+		switch (serverList){
+			case DEV:
+				return GlobalConstants.DEV_ADMIN_URL;
+			case TESTING:
+				return GlobalConstants.TESTING_ADMIN_URL;
+			case STAGING:
+				return GlobalConstants.STAGING_ADMIN_URL;
+			case LIVE:
+				return GlobalConstants.LIVE_ADMIN_URL;
+			default:
+				throw new RuntimeException("Server name is not found");
+		}
 	}
 	
 	protected int getRandomNumber() {

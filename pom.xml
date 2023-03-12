@@ -31,6 +31,7 @@
 		<faker.version>1.0.1</faker.version>
 		<log4j.version>1.2.16</log4j.version>
 		<reportng.version>1.1.4</reportng.version>
+		<!--<environment>Dev</environment>-->
 	</properties>
 
 	<!-- Quản lí thư viện -->
@@ -146,7 +147,97 @@
 			<version>${aspectj.version}</version>
 			<scope>runtime</scope>
 		</dependency>
+		<dependency>
+			<groupId>org.aeonbits.owner</groupId>
+			<artifactId>owner</artifactId>
+			<version>1.0.10</version>
+		</dependency>
+
+
 	</dependencies>
+
+<!--	<profiles>-->
+<!--		<profile>-->
+<!--			<id>Dev</id>-->
+<!--			<build>-->
+<!--				<plugins>-->
+<!--					<plugin>-->
+<!--						<groupId>org.apache.maven.plugins</groupId>-->
+<!--						<artifactId>maven-surefire-plugin</artifactId>-->
+<!--						<version>2.22.2</version>-->
+<!--						<configuration>-->
+<!--							<suiteXmlFiles>-->
+<!--								<suiteXmlFile>-->
+<!--									environmentXML/runTechPandaOnDev.xml-->
+<!--								</suiteXmlFile>-->
+<!--							</suiteXmlFiles>-->
+<!--						</configuration>-->
+<!--					</plugin>-->
+<!--				</plugins>-->
+<!--			</build>-->
+<!--		</profile>-->
+
+<!--		<profile>-->
+<!--			<id>Test</id>-->
+<!--			<build>-->
+<!--				<plugins>-->
+<!--					<plugin>-->
+<!--						<groupId>org.apache.maven.plugins</groupId>-->
+<!--						<artifactId>maven-surefire-plugin</artifactId>-->
+<!--						<version>2.22.2</version>-->
+<!--						<configuration>-->
+<!--							<suiteXmlFiles>-->
+<!--								<suiteXmlFile>-->
+<!--									environmentXML/runTechPandaOnTest.xml-->
+<!--								</suiteXmlFile>-->
+<!--							</suiteXmlFiles>-->
+<!--						</configuration>-->
+<!--					</plugin>-->
+<!--				</plugins>-->
+<!--			</build>-->
+<!--		</profile>-->
+
+<!--		<profile>-->
+<!--			<id>Staging</id>-->
+<!--			<build>-->
+<!--				<plugins>-->
+<!--					<plugin>-->
+<!--						<groupId>org.apache.maven.plugins</groupId>-->
+<!--						<artifactId>maven-surefire-plugin</artifactId>-->
+<!--						<version>2.22.2</version>-->
+<!--						<configuration>-->
+<!--							<suiteXmlFiles>-->
+<!--								<suiteXmlFile>-->
+<!--									environmentXML/runTechPandaOnStaging.xml-->
+<!--								</suiteXmlFile>-->
+<!--							</suiteXmlFiles>-->
+<!--						</configuration>-->
+<!--					</plugin>-->
+<!--				</plugins>-->
+<!--			</build>-->
+<!--		</profile>-->
+
+<!--		<profile>-->
+<!--			<id>Live</id>-->
+<!--			<build>-->
+<!--				<plugins>-->
+<!--					<plugin>-->
+<!--						<groupId>org.apache.maven.plugins</groupId>-->
+<!--						<artifactId>maven-surefire-plugin</artifactId>-->
+<!--						<version>2.22.2</version>-->
+<!--						<configuration>-->
+<!--							<suiteXmlFiles>-->
+<!--								<suiteXmlFile>-->
+<!--									environmentXML/runTechPandaOnLive.xml-->
+<!--								</suiteXmlFile>-->
+<!--							</suiteXmlFiles>-->
+<!--						</configuration>-->
+<!--					</plugin>-->
+<!--				</plugins>-->
+<!--			</build>-->
+<!--		</profile>-->
+<!--	</profiles>-->
+
 
 	<!-- Compiler/ Run Test -->
 	<build>
@@ -163,7 +254,7 @@
 				</configuration>
 			</plugin>
 
-			<!-- Run test -->
+		<!--Run test -->
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-surefire-plugin</artifactId>
