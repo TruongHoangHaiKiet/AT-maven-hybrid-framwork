@@ -1,16 +1,20 @@
 package com.techpanda.account;
 
-import commons.baseTest;
-import data.techpanda.AccountDataJson;
 import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
+
+import commons.baseTest;
+import data.techpanda.AccountDataJson;
 import pageObjects.Navigation.PageGeneratorManager;
-import pageObjects.user.*;
-import utilities.PropertiesConfig;
+import pageObjects.user.AccountInformationPageObjects;
+import pageObjects.user.MyDashboardPageObjects;
+import pageObjects.user.UserHomePageObjects;
+import pageObjects.user.UserLoginPageObjects;
+import pageObjects.user.UserRegisterPageObject;
 
 public class Level_26_Environment_XML extends baseTest { // Dùng kế thừa sẽ không cần thông qua object/ instance để call data nữa
 	// Khai báo = Declare
